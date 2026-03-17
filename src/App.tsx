@@ -3,9 +3,8 @@ import { demoAudits, industryChecks } from "./data/templates";
 import { estimatedRevenueOpportunity, overallScore } from "./lib/engines";
 import { loadAudits, saveAudits } from "./lib/storage";
 import { CompanyAudit, Industry } from "./types";
-import AIEfficiencyAuditFunction from "./components/AIEfficiencyAuditFunction";
 
-type View = "dashboard" | "create" | "detail" | "report" | "compare" | "settings" | "ai-function";
+type View = "dashboard" | "create" | "detail" | "report" | "compare" | "settings";
 
 const initialState = loadAudits() ?? demoAudits;
 
@@ -52,8 +51,7 @@ export default function App() {
               ["detail", "Audit Detail"],
               ["report", "Client Report"],
               ["compare", "Compare Audits"],
-              ["settings", "Settings"],
-              ["ai-function", "AI Efficiency Audit Function"]
+              ["settings", "Settings"]
             ].map(([key, label]) => (
               <button
                 key={key}
@@ -95,8 +93,6 @@ export default function App() {
               }}
             />
           )}
-
-          {view === "ai-function" && <AIEfficiencyAuditFunction />}
         </main>
       </div>
     </div>

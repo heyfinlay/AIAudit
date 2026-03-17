@@ -17,6 +17,3 @@
 ## Known staged items
 - Real auth/session handling and server-side APIs are staged.
 - Live website crawling/performance checks are staged (v2 hook architecture).
-
-## Hotfix update
-- Restored the original **AI Efficiency Audit Function** experience as a dedicated app section so the core report-builder workflow remains available alongside the new dashboard architecture.
