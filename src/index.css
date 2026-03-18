@@ -1,42 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --brand: #009866;
+  --surface: #06100d;
+  --surface-elevated: #0b1411;
+  --surface-glass: rgba(255, 255, 255, 0.04);
+  --text-primary: #f2f6f4;
+  --text-secondary: #aabbb3;
+  --report-bg: #f3f6f4;
+}
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: #f4f4f3;
-  color: #111111;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(0, 152, 102, 0.18), transparent 24%),
+    linear-gradient(180deg, #05100c 0%, #06100d 42%, #08130f 100%);
+  color: var(--text-primary);
+  font-family: "Manrope", "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(0, 152, 102, 0.28);
+  color: white;
 }
 
 @media print {
   @page {
     size: A4;
-    margin: 12mm;
+    margin: 10mm;
   }
 
   html,
   body {
-    background: #ffffff !important;
+    background: white !important;
   }
 
-  .screen-only {
-    display: none !important;
+  body {
+    color: #101714;
   }
 
-  .report-page {
-    width: 100%;
-    min-height: 0 !important;
-    border: 1px solid #e4e4e7 !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-  }
-
-  .avoid-break {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  .xl\:sticky {
+    position: static !important;
   }
 }
