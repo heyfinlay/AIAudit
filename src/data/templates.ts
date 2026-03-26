@@ -32,16 +32,18 @@ export const industryChecks: Record<Industry, string[]> = {
 
 export const sectionDefinitions: Array<{ id: SectionId; label: string; kicker: string; description: string }> = [
   { id: "cover", label: "Cover", kicker: "01", description: "Title page, client metadata, and brand positioning." },
-  { id: "executiveSummary", label: "Executive Summary", kicker: "02", description: "High-level diagnosis and what to fix first." },
-  { id: "companySnapshot", label: "Company Snapshot", kicker: "03", description: "Business context and operating baseline." },
-  { id: "workflowIssues", label: "Current Workflow Issues", kicker: "04", description: "Primary friction points slowing execution." },
-  { id: "aiOpportunities", label: "AI Opportunities", kicker: "05", description: "Where AI support can create leverage first." },
-  { id: "automationOpportunities", label: "Automation Opportunities", kicker: "06", description: "Workflow automation opportunities and readiness." },
-  { id: "salesInefficiencies", label: "Lead and Sales Inefficiencies", kicker: "07", description: "Revenue leaks across response, qualification, and follow-up." },
-  { id: "recommendations", label: "Recommendations", kicker: "08", description: "Deterministic priorities driven by the audit scorecard." },
-  { id: "implementationRoadmap", label: "Implementation Roadmap", kicker: "09", description: "Phased rollout plan with sequencing." },
-  { id: "roi", label: "ROI and Value Estimate", kicker: "10", description: "Time-saved and value framing for the client." },
-  { id: "consultantNotes", label: "Consultant Notes", kicker: "11", description: "Final commentary, next steps, and consultant perspective." }
+  { id: "executiveSummary", label: "Current State Overview", kicker: "02", description: "What the business looks like now and where the biggest drag is sitting." },
+  { id: "companySnapshot", label: "Business Snapshot", kicker: "03", description: "Business context, team profile, channels, and operating baseline." },
+  { id: "workflowIssues", label: "Current Workflow Bloat", kicker: "04", description: "Where time, response speed, and internal momentum are being lost." },
+  { id: "aiOpportunities", label: "AI Opportunities", kicker: "05", description: "Where AI can improve speed, reporting, and customer communication." },
+  { id: "automationOpportunities", label: "Automation Opportunities", kicker: "06", description: "Which manual processes should be tightened or automated next." },
+  { id: "salesInefficiencies", label: "Lead and Sales Inefficiencies", kicker: "07", description: "Revenue leakage across response, qualification, and follow-up." },
+  { id: "recommendations", label: "Priority Recommendations", kicker: "08", description: "Most important changes to make first based on the audit." },
+  { id: "implementationRoadmap", label: "Implementation Roadmap", kicker: "09", description: "Phased rollout plan showing how to implement in the right order." },
+  { id: "roi", label: "ROI and Value Estimate", kicker: "10", description: "Time, money, and operating upside created by implementation." },
+  { id: "implementationRecommendation", label: "Implementation Recommendation", kicker: "11", description: "Recommended delivery model, timeline, and investment framing." },
+  { id: "upsellArchitecture", label: "Upsell Architecture", kicker: "12", description: "How the audit naturally leads into implementation and ongoing support." },
+  { id: "consultantNotes", label: "Consultant Notes", kicker: "13", description: "Final recommendation, next step, and consultant perspective." }
 ];
 
 const defaultSectionOrder = sectionDefinitions.map((section) => section.id);
@@ -578,6 +580,22 @@ export function createSeedAudit(partial: Pick<AuditDocument, "id" | "status" | "
         likelyOutcome: "A more resilient operating rhythm with lower admin dependency."
       }
     ],
+    implementationRecommendation: {
+      summary:
+        "The strongest path is a staged implementation that starts with one quick-win operating layer, then moves into workflow tightening and reporting visibility once the basics are stable.",
+      whyNow:
+        "The business already has enough demand and operating complexity for AI support to create meaningful leverage. The risk is not moving too early. The risk is letting manual admin and slow follow-up continue to absorb senior time.",
+      recommendedOffer: "AI Audit + 30-day implementation sprint",
+      estimatedTimeline: "2 to 6 weeks depending on internal complexity and system access",
+      investmentRange: "$3k–$12k depending on scope, integrations, and delivery depth"
+    },
+    upsellArchitecture: {
+      quickWinOffer: "Quick-win implementation sprint focused on response speed, follow-up, and one reporting workflow",
+      coreImplementationOffer: "Done-for-you operating layer covering qualification, admin reduction, and reporting improvements",
+      ongoingSupportOffer: "Monthly optimization and support retainer for refinement, reporting, and new workflow rollouts",
+      positioningNote:
+        "The audit should feel like the diagnostic entry point. The implementation offer should feel like the obvious next step once the client sees where time and money are being lost."
+    },
     consultantNotes: {
       clientNotes:
         "This business does not need a bigger tool stack first. It needs tighter ownership, faster response coverage, and a more structured handoff layer before scaling automation.",

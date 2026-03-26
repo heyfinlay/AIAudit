@@ -19,9 +19,9 @@ export function AuditWorkspace() {
           <div className="flex flex-wrap items-center justify-between gap-5">
             <div>
               <p className="text-[11px] uppercase tracking-[0.36em] text-[#7da996]">AuditAI</p>
-              <h1 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-white md:text-[2.7rem]">AI Efficiency Audit Builder</h1>
+              <h1 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-white md:text-[2.7rem]">AI Audit Report Builder</h1>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#a7b7b0] md:text-base">
-                The product is back around its highest-value workflow: compose the audit on the left, present a premium live report on the right, and keep scoring, recommendations, and ROI framing attached to the same audit state.
+                Build premium, business-owner-facing AI audit reports that clearly show what the business looks like now, where time and money are being lost, and how implementation should roll out next.
               </p>
             </div>
 

@@ -27,6 +27,8 @@ export type SectionId =
   | "recommendations"
   | "implementationRoadmap"
   | "roi"
+  | "implementationRecommendation"
+  | "upsellArchitecture"
   | "consultantNotes";
 
 export interface AssumptionModel {
@@ -128,6 +130,21 @@ export interface ConsultantNotes {
   nextSteps: string;
 }
 
+export interface ImplementationRecommendation {
+  summary: string;
+  whyNow: string;
+  recommendedOffer: string;
+  estimatedTimeline: string;
+  investmentRange: string;
+}
+
+export interface UpsellArchitecture {
+  quickWinOffer: string;
+  coreImplementationOffer: string;
+  ongoingSupportOffer: string;
+  positioningNote: string;
+}
+
 export interface AuditProfile {
   industry: Industry;
   website: string;
@@ -162,6 +179,8 @@ export interface AuditDocument {
   salesInefficiencies: LeadIssue[];
   quickWins: string[];
   roadmap: RoadmapPhase[];
+  implementationRecommendation: ImplementationRecommendation;
+  upsellArchitecture: UpsellArchitecture;
   consultantNotes: ConsultantNotes;
   scores: AuditScore[];
   recommendations: Recommendation[];
